@@ -9,15 +9,15 @@
   </head>
   <body>
     <script>
-      // const md = new MobileDetect(window.navigator.userAgent);
-      // // console.log(md.mobile()); null은 false, undefined도 false, 0도 false
-      // if (md.mobile()) {
-      //   //여기는 모바일로 접속했다.
-      //   location.href = "mobile";
-      // } else {
-      //   //여기는 pc 또는 태블릿으로 접속했다.
-      //   location.href = "pc";
-      // }
+      const md = new MobileDetect(window.navigator.userAgent);
+      // console.log(md.mobile()); null은 false, undefined도 false, 0도 false
+      if (md.mobile()) {
+        //여기는 모바일로 접속했다.
+        location.href = "mobile";
+      } else {
+        //여기는 pc 또는 태블릿으로 접속했다.
+        location.href = "pc";
+      }
     </script>
   </body>
 </html>
