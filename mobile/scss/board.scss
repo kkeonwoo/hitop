@@ -1,0 +1,174 @@
+@import "vars";
+@import "mixin";
+
+.contentsTable {
+  width: 100%;
+  border-top: 2px solid $main-color;
+  tbody,
+  thead {
+    th,
+    td {
+      padding: 15px 10px;
+      border-bottom: 1px solid #999;
+      border-left: 1px solid #999;
+      &:nth-child(1) {
+        border-left: none;
+      }
+    }
+  }
+}
+.boardTable {
+  width: 100%;
+  border-top: 2px solid $main-color;
+  tbody,
+  thead {
+    th,
+    td {
+      padding: 15px 10px;
+      border-bottom: 1px solid #999;
+      text-align: center;
+    }
+  }
+  tbody {
+    tr:nth-child(2n) {
+      background-color: #999;
+    }
+  }
+  thead {
+    font-weight: 500;
+  }
+  .subject {
+    text-align: left;
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+  ul {
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+  }
+  a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1px;
+    border-radius: 5px;
+    &.first {
+      background-color: #111;
+      &:before {
+        color: #fff;
+        @include icon("keyboard_double_arrow_left", 0);
+      }
+    }
+    &.prev {
+      background-color: #111;
+      &:before {
+        color: #fff;
+        @include icon("chevron_left", 0);
+      }
+    }
+    &.last {
+      background-color: #111;
+      &:before {
+        color: #fff;
+        @include icon("keyboard_double_arrow_right", 0);
+      }
+    }
+    &.next {
+      background-color: #111;
+      &:before {
+        color: #fff;
+        @include icon("chevron_right", 0);
+      }
+    }
+
+    &.active {
+      background-color: $main-color;
+      color: #fff;
+    }
+  }
+}
+
+.marketTable {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid $main-color;
+  tbody,
+  thead {
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 15px 10px;
+      vertical-align: middle;
+      line-height: 1.6;
+    }
+  }
+  thead {
+    border-top: 2px solid $main-color;
+    background-color: #eee;
+  }
+  tbody {
+    color: #999;
+    font-size: 16px;
+    font-weight: 300;
+    img {
+      width: 80%;
+      margin: 10px auto;
+    }
+    a {
+      color: $main-color;
+      border: 1px solid $main-color;
+      border-radius: 5px;
+      padding: 8px 20px 8px 10px;
+      transition: all 0.25s ease-in-out;
+      &::before {
+        @include icon("link");
+        font-family: "Material Icons";
+        color: $main-color;
+        margin-right: 10px;
+        transition: all 0.25s ease-in-out;
+        vertical-align: middle;
+      }
+      &:hover {
+        color: #fff;
+        background-color: $main-color;
+        &::before {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.searchForm {
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  padding: 80px 150px;
+  #searchTxt {
+    height: 50px;
+    padding: 0 10px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    margin-right: 10px;
+    flex-grow: 1;
+  }
+  #searchCategory {
+    height: 50px;
+    padding: 0 10px;
+    border: 1px solid #999;
+    width: 200px;
+    margin-right: 10px;
+  }
+  button {
+    width: 80px;
+    background-color: #111;
+    border-radius: 5px;
+    color: #fff;
+  }
+}

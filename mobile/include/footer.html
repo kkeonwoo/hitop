@@ -1,0 +1,91 @@
+<footer id="footer">
+  <div class="utilMenu">
+    <ul>
+      <li><a href="">이용약관</a></li>
+      <!-- prettier-ignore -->
+      <li><a href=""><strong>개인정보보호정책</strong> </a></li>
+      <li><a href="">사이트맵</a></li>
+      <li><a href="">온라인견적문의</a></li>
+    </ul>
+  </div>
+  <div class="addressBox">
+    <div class="container">
+      <div class="fLogo">
+        <img src="../images/layout/fLogo.png" alt="" />
+      </div>
+      <div class="address">
+        <p class="title">하이탑 : 서울 송파구 성내천로 14길 13 (3층)</p>
+        <!-- prettier-ignore -->
+        <p class="info">
+          <span>대표전화 : 070-7715-4400</span>
+          <span>이메일 : hitop4400@hanmail.net</span>
+          <span>사업자번호 : 402-81-83259</span>
+        </p>
+        <p class="copyright">Copyright ⓒ 2018 HITOP. All rights reserved</p>
+      </div>
+      <!-- prettier-ignore -->
+      <div class="tel">
+        <span>고객만족센터</span>
+        <strong>070-7715-4400</strong>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.querySelector("#header");
+  const btnAll = document.querySelector("#header .btnAll");
+  btnAll.addEventListener("click", function () {
+    header.classList.toggle("open");
+  });
+
+  const depth01 = $("#gnb .depth01");
+  const depth02 = $("#gnb .depth02");
+
+  depth01.on("click",function(e){
+    e.preventDefault(); // 기본 클릭 방지(?)
+    const depth02 = $(this).next(".depth02");
+    //next - 내 다음 형제
+    const siblings = $(this).parent().siblings().find(".depth02");
+    //this - 이벤트를 받고 있는 개체
+    siblings.stop().slideUp();
+    depth02.stop().slideToggle();
+    return false;
+  });
+
+  window.addEventListener("scroll", function(){
+    if(window.scrollY > 0) {
+      header.classList.add("scroll");
+    } else {
+      header.classList.remove("scroll");
+    }
+  });
+
+  const menu = $("#lnb .menu");
+  const lnbDepth01 = $("#lnb .menu button");
+
+
+  lnbDepth01.on("click",function(e){
+    e.preventDefault();
+    $(this).next().slideToggle(); 
+  });
+
+  // function eat(){
+  //   console.log("밥을 먹다");
+  // }
+  // eat();
+  // const jjang = {
+  //   name:"장성호"
+  //   age:20,
+  //   weight:80
+  //   run:function(){
+  //     console.log("달리다");
+  //   }
+  // }
+  // console.log(jjang.name);
+  // console.log(run());
+
+</script>
+
+</body>
+</html>
