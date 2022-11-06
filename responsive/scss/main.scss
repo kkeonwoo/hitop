@@ -316,8 +316,9 @@
 #news {
   .list {
     display: flex;
-    //justify-content: space-between;
+    justify-content: space-between;
     li {
+      width: calc(33.33% - 10px);
       border: 1px solid #ccc;
       box-sizing: border-box;
       img {

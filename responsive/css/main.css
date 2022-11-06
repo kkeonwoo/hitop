@@ -309,8 +309,10 @@
 
 #news .list {
   display: flex;
+  justify-content: space-between;
 }
 #news .list li {
+  width: calc(33.33% - 10px);
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
