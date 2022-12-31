@@ -41,11 +41,9 @@
   const lnbDepth02 = $("#lnb .depth02 ul");
 
   const lnbButton = $("#lnb .menu button");
-  // subVisual 높이 - lnb 높이 < scrolltop
   const lnb = $("#lnb");
   let subVisual = $(".subVisual");
   let lnbTop = subVisual.height() - lnb.height();
-  let st = $(window).scrollTop();
 
   lnbButton.on("click",function(){
     if (header.hasClass("mobile")) {
@@ -53,10 +51,11 @@
       ul.slideToggle();
     };
   });
+
   btnAll.on("click", function(e){
     // e.preventDefault();
     header.toggleClass("open");
-    depth02.delay(500).slideUp();  // method chainning 메서드를 하나 이상 쓸 수 있는 것
+    depth02.delay(500).slideUp();
     $(window).on("scroll touchmove mousewheel", function (e) {
       $(window).scrollTop(0);
       e.stopPropagation();
@@ -64,7 +63,7 @@
     });
     return false;
   }); 
-  //hasClass("") ""클래스를 가지고 있다면 true, 없다면 false
+
   depth01.on("click",function(){
     if(header.hasClass("mobile")) {
       const depth02 = $(this).next();
@@ -76,6 +75,7 @@
       return false;
     } 
   });
+
   //resize (화면 크기) 
   //vanilla - scroll 포함된 값
   // jquery - scroll 제외
@@ -89,6 +89,7 @@
     }
   }); 
   window.dispatchEvent(new Event("resize")); */
+
   //jquery
   $(window).on("resize",function(){
     const w = $(window).outerWidth();
@@ -107,13 +108,19 @@
       lnbDepth02.removeAttr("style");
     }
   });
+  
   $(window).on("scroll",function(){
-     st = $(window).scrollTop();
+    let st = $(window).scrollTop();
+    if(st > 0){
+      header.addClass('scroll');
+    } else {
+      header.removeClass('scroll');
+    };
     if(st > lnbTop) {
       lnb.addClass("fixed");
     } else {
       lnb.removeClass("fixed");
-    }
+    };
   });
   $(window).trigger("resize");
 </script>

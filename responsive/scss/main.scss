@@ -47,14 +47,10 @@
           repeat: no-repeat;
         }
       }
-      &.visual01 .img {
-        background-image: url("../images/main/mainVisual01.jpg");
-      }
-      &.visual02 .img {
-        background-image: url("../images/main/mainVisual02.jpg");
-      }
-      &.visual03 .img {
-        background-image: url("../images/main/mainVisual03.jpg");
+      @for $i from 1 to 3 {
+        &.visual0#{$i} .img {
+          background-image: url("../images/main/mainVisual0#{$i}.jpg");
+        }
       }
     }
   }
@@ -224,12 +220,7 @@
   .list {
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-between;
-    // align-content: space-between;
-    // height: 720px;
     margin: -10px;
-    //width: 1220px;
-    //margin과 width값을 동시에 주면 안된다.
     li {
       position: relative;
       overflow: hidden;
@@ -237,14 +228,11 @@
       &:hover {
         img {
           transform: scale(1.2);
-          //filter: saturate(1);
         }
         //prettier-ignore
         .border {
-          span:nth-child(1) {transform: scaleX(1);}
-          span:nth-child(2) {transform: scaleY(1);}
-          span:nth-child(3) {transform: scaleX(1);}
-          span:nth-child(4) {transform: scaleY(1);}
+          span:nth-child(2n-1) {transform: scaleX(1);}
+          span:nth-child(2n) {transform: scaleY(1);}
         }
       }
       .txtBox {
@@ -259,7 +247,6 @@
       }
       img {
         transition: all 0.25s ease-in-out;
-        //filter: saturate(0);
         vertical-align: top;
       }
       .border {
@@ -272,38 +259,35 @@
           position: absolute;
           transition: transform 0.25s ease;
           background-color: #fff;
-          &:nth-child(1) {
-            width: 100%;
-            height: 1px;
-            top: 0;
-            left: 0;
-            transform: scaleX(0);
-            transform-origin: 0 50%;
-          }
-          &:nth-child(2) {
+          &:nth-child(2n) {
             width: 1px;
             height: 100%;
             top: 0;
-            right: 0;
             transform: scaleY(0);
+          }
+          &:nth-child(2n-1) {
+            width: 100%;
+            height: 1px;
+            transform: scaleX(0);
+          }
+          &:nth-child(1) {
+            top: 0;
+            left: 0;
+            transform-origin: 0 50%;
+          }
+          &:nth-child(2) {
+            right: 0;
             transform-origin: 50% 0;
             transition-delay: 0.25s;
           }
           &:nth-child(3) {
-            width: 100%;
-            height: 1px;
             bottom: 0;
             left: 0;
-            transform: scaleX(0);
             transform-origin: 100% 50%;
             transition-delay: 0.5s;
           }
           &:nth-child(4) {
-            width: 1px;
-            height: 100%;
-            top: 0;
             left: 0;
-            transform: scaleY(0);
             transform-origin: 50% 100%;
             transition-delay: 0.75s;
           }
@@ -321,6 +305,12 @@
       width: calc(33.33% - 10px);
       border: 1px solid #ccc;
       box-sizing: border-box;
+      &:hover {
+        transform: translateY(-20px);
+        border: 1px solid $main-color;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0px 5px 10px #ddd;
+      }
       img {
         width: 100%;
         height: 350px;

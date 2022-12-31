@@ -12,9 +12,22 @@ body {
 
 #header {
   width: 100%;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 99;
   color: #fff;
+}
+#header::before {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: block;
+  position: absolute;
+  content: "";
 }
 #header:after {
   width: 100%;
@@ -27,6 +40,7 @@ body {
   content: "";
 }
 #header .container {
+  width: 100%;
   display: flex;
   justify-content: center;
   position: static;
@@ -105,6 +119,9 @@ body {
 }
 #header .btnAll span:nth-child(3) {
   top: 64px;
+}
+#header.scroll::before {
+  opacity: 1;
 }
 #header.open #gnb {
   right: 0;
