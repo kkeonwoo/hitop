@@ -230,16 +230,10 @@
   });
   //document.querySelector
   const mainVisualTL = gsap.timeline();
-  // mainVisualTL
-  //   .from("#mainVisual .slogan h2 .char", { y: 100, opacity: 0, duration: 1, ease: "power4.out", stagger: 0.1 })
-  //   .from("#mainVisual .slogan p .char", { y: 100, opacity: 0, duration: 1, ease: "power4.out", stagger: 0.02 }, 1);
 
   mainVisualTL
     .from("#mainVisual .slogan h2 .char", { y: 100, opacity: 0, duration: 1, ease: "power4.out", stagger: 0.05 })
     .from("#mainVisual .slogan p .char", { y: 100, opacity: 0, duration: 1, ease: "power4.out", stagger: 0.02 }, "-=1");
-
-  // gsap.from("#mainVisual .slogan h2 .char", { y: 100, opacity: 0, delay: 1, duration: 1, ease: "power4.out", stagger: 0.02 });
-  // gsap.from("#mainVisual .slogan p .char", { y: 100, opacity: 0, delay: 2, duration: 1, ease: "power4.out", stagger: 0.02 });
 
   const mainVisualSlider = new Swiper("#mainVisual", {
     effect: "fade",
