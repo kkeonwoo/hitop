@@ -45,13 +45,15 @@
 #mainVisual ul li.visual02 .img {
   background-image: url("../images/main/mainVisual02.jpg");
 }
+#mainVisual ul li.visual03 .img {
+  background-image: url("../images/main/mainVisual03.jpg");
+}
 #mainVisual .slogan {
   z-index: 2;
   text-align: center;
   color: #fff;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   position: absolute;
   top: 50%;
@@ -150,18 +152,12 @@
   height: 10px;
   margin: 10px auto 0;
   background-color: #fff;
-  -webkit-animation-name: mouseAnimation;
-          animation-name: mouseAnimation;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation: mouseAnimation 1s ease-in-out 0s infinite alternate;
-          animation: mouseAnimation 1s ease-in-out 0s infinite alternate;
+  animation-name: mouseAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation: mouseAnimation 1s ease-in-out 0s infinite alternate;
   display: block;
   position: relative;
   content: "";
@@ -356,15 +352,6 @@
   display: block;
   position: relative;
   content: "";
-}
-
-@-webkit-keyframes mouseAnimation {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(10px);
-  }
 }
 
 @keyframes mouseAnimation {

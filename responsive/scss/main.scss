@@ -47,7 +47,7 @@
           repeat: no-repeat;
         }
       }
-      @for $i from 1 to 3 {
+      @for $i from 1 to 4 {
         &.visual0#{$i} .img {
           background-image: url("../images/main/mainVisual0#{$i}.jpg");
         }

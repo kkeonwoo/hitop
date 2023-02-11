@@ -228,17 +228,12 @@
     pause.style.display = "block";
     play.style.display = "none";
   });
-  //document.querySelector
-  const mainVisualTL = gsap.timeline();
-
-  mainVisualTL
-    .from("#mainVisual .slogan h2 .char", { y: 100, opacity: 0, duration: 1, ease: "power4.out", stagger: 0.05 })
-    .from("#mainVisual .slogan p .char", { y: 100, opacity: 0, duration: 1, ease: "power4.out", stagger: 0.02 }, "-=1");
 
   const mainVisualSlider = new Swiper("#mainVisual", {
     effect: "fade",
     speed: 1000,
     loop: true,
+    loopedSlides: 1,
     navigation: {
       nextEl: "#mainVisual .next",
       prevEl: "#mainVisual .prev",
